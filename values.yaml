@@ -452,6 +452,11 @@ metrics:
     serviceMonitor:
       # Enable deployment of Prometheus Operator ServiceMonitor resource
       enabled: false
-      # namespace: monitoring
+      # interval:
+
+      ## Fallback protocol to use if a scrape returns blank, unparseable, or otherwise
+      ## invalid Content-Type.
+      fallbackScrapeProtocol: "PrometheusText0.0.4"
+
       # Additional labels for the ServiceMonitor
       labels: {}

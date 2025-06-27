@@ -30,6 +30,9 @@ spec:
     relabelings:
 {{ toYaml .Values.metrics.prometheus.serviceMonitor.relabelings | indent 6 }}
 {{- end }}
+{{- if .Values.metrics.prometheus.serviceMonitor.fallbackScrapeProtocol }}
+  fallbackScrapeProtocol: {{ .Values.metrics.prometheus.serviceMonitor.fallbackScrapeProtocol }}
+{{- end }}
   selector:
     matchLabels:
       app: {{ template "apache-nifi.name" . }}
