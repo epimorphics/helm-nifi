@@ -32,6 +32,8 @@ spec:
 {{- end }}
 {{- if .Values.metrics.prometheus.serviceMonitor.fallbackScrapeProtocol }}
   fallbackScrapeProtocol: {{ .Values.metrics.prometheus.serviceMonitor.fallbackScrapeProtocol }}
+{{- else }}
+  fallback_scrape_protocol: PrometheusText0.0.4
 {{- end }}
   selector:
     matchLabels:
